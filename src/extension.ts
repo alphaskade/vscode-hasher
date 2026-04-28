@@ -9,6 +9,10 @@ import {
 } from 'vscode';
 import { Md5Command } from './md5-command';
 import { Sha1Command } from './sha1-command';
+import { Sha224Command } from './sha2-command';
+import { Sha256Command } from './sha2-command';
+import { Sha384Command } from './sha2-command';
+import { Sha512Command } from './sha2-command';
 import { Base64EncodeCommand } from './base64-encode-command';
 import { Base64DecodeCommand } from './base64-decode-command';
 import { UriEncodeComponentCommand } from './uri-encode-component-command';
@@ -34,6 +38,43 @@ export function activate(context: ExtensionContext) {
       let selected = getSelectedTextAndRange(editor);
       let sha1 = new Sha1Command();
       replaceText(editor, selected.range, sha1.run(selected.text));
+    })
+  );
+
+  context.subscriptions.push(
+    commands.registerCommand('extension.sha224', () => {
+      let editor = getActiveEditor();
+      let selected = getSelectedTextAndRange(editor);
+      let sha224 = new Sha224Command();
+      replaceText(editor, selected.range, sha224.run(selected.text));
+    })
+  );
+
+
+  context.subscriptions.push(
+    commands.registerCommand('extension.sha256', () => {
+      let editor = getActiveEditor();
+      let selected = getSelectedTextAndRange(editor);
+      let sha256 = new Sha256Command();
+      replaceText(editor, selected.range, sha256.run(selected.text));
+    })
+  );
+
+  context.subscriptions.push(
+    commands.registerCommand('extension.sha384', () => {
+      let editor = getActiveEditor();
+      let selected = getSelectedTextAndRange(editor);
+      let sha384 = new Sha384Command();
+      replaceText(editor, selected.range, sha384.run(selected.text));
+    })
+  );
+
+  context.subscriptions.push(
+    commands.registerCommand('extension.sha512', () => {
+      let editor = getActiveEditor();
+      let selected = getSelectedTextAndRange(editor);
+      let sha512 = new Sha512Command();
+      replaceText(editor, selected.range, sha512.run(selected.text));
     })
   );
 
