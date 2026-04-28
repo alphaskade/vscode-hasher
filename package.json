@@ -2,7 +2,7 @@
   "name": "vscode-hasher",
   "displayName": "Hasher",
   "description":
-    "Generate various hash (md5, sha1), HTML entity conversion and many more",
+    "Generate various hashes (md5, sha1, sha2), HTML entity conversion and many more",
   "version": "1.0.1",
   "publisher": "deerawan",
   "icon": "images/hasher.png",
@@ -26,6 +26,10 @@
   "activationEvents": [
     "onCommand:extension.md5",
     "onCommand:extension.sha1",
+    "onCommand:extension.sha224",
+    "onCommand:extension.sha256",
+    "onCommand:extension.sha384",
+    "onCommand:extension.sha512",
     "onCommand:extension.base64Encode",
     "onCommand:extension.base64Decode",
     "onCommand:extension.uriEncodeComponent",
@@ -45,6 +49,22 @@
       {
         "command": "extension.sha1",
         "title": "Hasher: SHA1"
+      },
+      {
+        "command": "extension.sha224",
+        "title": "Hasher: SHA224"
+      },
+      {
+        "command": "extension.sha256",
+        "title": "Hasher: SHA256"
+      },
+      {
+        "command": "extension.sha384",
+        "title": "Hasher: SHA384"
+      },
+      {
+        "command": "extension.sha512",
+        "title": "Hasher: SHA512"
       },
       {
         "command": "extension.base64Encode",
